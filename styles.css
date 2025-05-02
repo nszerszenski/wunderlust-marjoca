@@ -1,0 +1,344 @@
+/* CSS Reset from Eric Meyer */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #fff;
+    color: #222;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote::before, blockquote::after,
+q::before, q::after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.skip-link {
+    position: absolute;
+    left: -9999px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    z-index: 999;
+}
+.skip-link:focus {
+    position: absolute;
+    left: 1rem;
+    top: 1rem;
+    padding: 0.5rem 1rem;
+    background: #ffffcc;
+    color: #000;
+    border: 2px solid #000;
+    font-weight: bold;
+    z-index: 1000;
+}
+
+header {
+    background: linear-gradient(to bottom, #dbefff 0%, white 80%);
+    padding: 2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    flex-wrap: wrap;
+}
+.branding {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.header-text p {
+    margin: 0;
+}
+@media (min-width: 768px) {
+    header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    nav {
+        align-self: center;
+        margin-top: 0;
+    }
+}
+
+header h1 {
+    font-family: 'Molle', cursive;
+    font-size: 2.5rem;
+    color: #000033;
+}
+header p {
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+}
+
+/* Nav Toggle Styles */
+#toggle {
+    display: none;
+}
+label[for="toggle"] {
+    display: block;
+    background: #006666;
+    color: white;
+    padding: 0.5rem 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    text-align: center;
+}
+nav ul {
+    display: none;
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+    margin-top: 1rem;
+}
+#toggle:checked + label + ul {
+    display: flex;
+}
+@media (min-width: 768px) {
+    label[for="toggle"] {
+        display: none;
+    }
+    nav ul {
+        display: flex !important;
+        flex-direction: row;
+        justify-content: center;
+        margin-top: 0;
+    }
+}
+
+nav ul li a {
+    text-transform: uppercase;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    font-weight: bold;
+    border: 2px solid transparent;
+    background: #ffe100;
+    color: black;
+}
+nav ul li.active a {
+    border: 2px solid black;
+    border-color: black;
+    background: #fff200;
+    color: #000;
+}
+
+#intro {
+    padding: 2rem;
+}
+#intro h2 {
+    font-family: 'Molle', cursive;
+    font-size: 2.2rem;
+    color: #003366;
+    margin-bottom: 1rem;
+}
+#intro p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+}
+#img-grid {
+    display: grid;
+    gap: 1rem;
+}
+#img-grid picture {
+    grid-column: span 2;
+}
+@media (min-width: 768px) {
+    #img-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    #img-grid .span-two {
+        grid-column: span 2;
+      }
+}
+
+#plan {
+    background: #ffd83b;
+    padding: 2rem 1rem;
+    text-align: center;
+}
+#plan h3 {
+    font-family: 'Molle', cursive;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+#plan div {
+    display: grid;
+    gap: 1rem;
+}
+@media (min-width: 768px) {
+    #plan div {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+#plan section {
+    background: #3fb1e3;
+    padding: 2rem;
+    border: 2px solid white;
+    border-radius: 10px;
+    color: white;
+}
+#plan img {
+    width: 70px;
+    height: auto;
+    margin-bottom: 0.5rem;
+}
+
+#testimonials {
+    padding: 2rem 1rem;
+    text-align: center;
+}
+#testimonials h3 {
+    font-family: 'Molle', cursive;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+#testimonials div {
+    display: grid;
+    gap: 1.5rem;
+}
+@media (min-width: 768px) {
+    #testimonials div {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+#testimonials section {
+    padding: 1rem;
+}
+#testimonials section p {
+    margin-bottom: 0.25rem;
+}
+#testimonials section q {
+    font-style: italic;
+    font-size: 0.95rem;
+    color: #444;
+    display: block;
+    margin-top: 0.5rem;
+}
+#testimonials img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin-bottom: 0.5rem;
+}
+#testimonials h4 {
+    font-weight: bold;
+    margin-top: 0.5rem;
+    text-transform: uppercase;
+}
+
+#about {
+    background: #3fb1e3;
+    color: white;
+    padding: 2rem 1rem;
+    text-align: center;
+}
+#about h3 {
+    font-family: 'Molle', cursive;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+#about div {
+    display: grid;
+    gap: 1rem;
+}
+@media (min-width: 768px) {
+    #about div {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+#about section {
+    padding: 1rem;
+}
+#about section p {
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+#about img {
+    width: 70px;
+    margin-bottom: 0.5rem;
+}
+
+#contact {
+    padding: 3rem 1rem 2rem;
+}
+#contact h3 {
+    font-family: 'Molle', cursive;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+form {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+}
+input, select {
+    border: 2px solid purple;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border-radius: 4px;
+}
+input[type="submit"] {
+    background: purple;
+    color: white;
+    font-weight: bold;
+    border: none;
+    padding: 0.75rem 2rem;
+    cursor: pointer;
+    grid-column: span 2;
+}
+input[type="submit"]:hover {
+    background: #660066;
+}
+
+footer {
+    margin-top: 2rem;
+    padding: 1rem;
+    font-size: 0.8rem;
+    text-align: center;
+    background: #eee;
+    color: #444;
+}
+
+a:focus-visible,
+input:focus-visible,
+select:focus-visible {
+    outline: 2px solid #660066;
+    outline-offset: 2px;
+}
+
+/* Name: Natalie Szerszenski */
